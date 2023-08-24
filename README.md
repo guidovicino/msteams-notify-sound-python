@@ -32,18 +32,18 @@ with a notification sound and in a way that it doesn't dissapear from the notifi
 
 3. Install python requirements if you need:
 
-```sh
+  ```sh
     sudo apt install python3-gi
     pip3 install dbus-python playsound xdg-base-dirs
-```
+  ```
 
 4. Copy the following files in your $HOME directory:
 
-```
+  ```
     cp msteams-notify-sound-python.py $HOME/.local/bin
     cp msteams-notification-tone.mp3 $HOME/.local/share/sounds/msteams-notify-sound-fix/
     cp msteams-notify-sound-python.service $HOME$/.config/systemd/user/
-```
+  ```
 
 5.  Run it in the background automatically with systemd. E.g.
 
