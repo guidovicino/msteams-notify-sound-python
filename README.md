@@ -55,7 +55,7 @@ with a notification sound and in a way that it doesn't dissapear from the notifi
 
 6.  Troubleshooting the systemd service:
 
-    ```sh
+  ```sh
     systemctl --user status msteams-notify-sound-python
     journalctl SYSLOG_IDENTIFIER=msteams-notify-sound-python -f
-    ```
+  ```
