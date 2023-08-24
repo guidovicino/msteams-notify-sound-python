@@ -57,18 +57,11 @@ def handle_notification(bus, message):
 
     args = message.get_args_list()
 
-    global sounds_dir
-
     if len(args) == 8:
         notification = dict([(keys[i], args[i]) for i in range(8)])
         hintsDictionary = notification["hints"]
 
-
-        # If the notification is the first one with the Sender PID (Microsoft Teams PWA send sometimes two notification events for the same event) and is launched by an app call "Microsoft Edge" and include the domains "Teams.microsoft.com"
-        #
-        # WARN: If you ouse
-
-        if "sender-pid" in hintsDictionary and notification["app_name"] == "Microsoft Edge" and "teams.microsoft.com" in notification["body"]:
+        if "sender-pid" in hintsDictionary and notification["app_name"] == selected_browser and "teams.microsoft.com" in notification["body"]:
 
             logger.info("catched message - id = %s , app_name = %s, body = %s, summary = %s", notification["replaces_id"], notification["app_name"], notification["body"].replace("\n", " "), notification["summary"])
             playsound(sound_file)
