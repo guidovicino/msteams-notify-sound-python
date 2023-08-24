@@ -1,0 +1,12 @@
+[Unit]
+Description=MS Teams Notify with Sound (Python)
+Requires=dbus.service
+After=dbus.service
+
+[Service]
+ExecStart=/usr/bin/python3 %h/.local/bin/msteams-notify-sound-python.py
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=default.target
